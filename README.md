@@ -1,16 +1,16 @@
-# Three Centres of Excellence
+# Four Centres of Excellence
 
 A cinematic, single-file web presentation for the BPUT Annual Academic Council —
-Centurion University's three Centres of Excellence (Future Nexus, VEDIC, PATHS)
+Centurion University's four Centres of Excellence (Future Nexus, VEDIC, I5.0-4C Lab, PATHS)
 and a Build·Operate·Scale·Transfer proposal.
 
-Everything (markup, styles, script, diagrams) lives in **`index.html`**. No build
-step, no dependencies except Google Fonts.
+The markup, styles, script and diagrams live in **`index.html`**; image files are
+served directly from **`assets/`**. No build step is required for deployment.
 
 ## Run
 
 Open `index.html` in any modern browser, or serve the folder with a static server.
-Slide URLs are `#1` … `#14`.
+Slide URLs are `#1` … `#13`.
 
 ## Controls
 
@@ -35,10 +35,10 @@ theme — switch to light first for an ink-friendly file.
 
 ## Images
 
-Photo slots use `source.unsplash.com` placeholders that resolve on the open web and
-fall back to a designed gradient panel when offline or blocked. To use your own
-photos, replace the `src="…"` on each `<img>` (cover backdrop, the PATHS triptych)
-and drop images into the folder. Search the file for `SWAP:` / `photo__tag`.
+Images are referenced directly from `assets/`. Replacing a file with another file
+of the same name takes effect on the next Vercel deployment without regenerating
+`index.html`. If an asset is renamed or added, update `ASSETS` in
+`build-assets.py` and run `python3 build-assets.py` to refresh the CSS URL block.
 
 ## Editing content
 
