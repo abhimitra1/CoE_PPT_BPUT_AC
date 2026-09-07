@@ -1,6 +1,6 @@
 <script>/* theme: default to light; honour an explicit saved choice only */try{var t=localStorage.getItem('coe-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
 <title>Centres of Excellence</title>
-<meta name="description" content="A cinematic council presentation on Centurion University's four Centres of Excellence — Future Nexus, VEDIC, I5.0-4C Lab and PATHS — and a Build·Operate·Scale·Transfer proposal for BPUT.">
+<meta name="description" content="A cinematic council presentation on Centurion University's Centres of Excellence — Future Nexus, VEDIC, I5.0-4C Lab, Electric Vehicle Technology and PATHS — and a Build·Operate·Scale·Transfer proposal for BPUT.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -549,7 +549,7 @@ img{display:block;max-width:100%}
 .cover__title{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,9cqi,7rem);line-height:1.06;letter-spacing:.015em;text-wrap:balance}
 .cover__title .em-serif{display:inline-block}
 .cover__sub{font-size:var(--fs-lede);color:var(--ink-dim);max-width:54ch;line-height:1.5}
-.cover__coes{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.55rem,1.7cqi,1.15rem)}
+.cover__coes{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(.45rem,1.2cqi,.85rem)}
 .coe{border:1px solid var(--line);border-radius:12px;padding:clamp(.75rem,1.8cqi,1.2rem);background:color-mix(in srgb,var(--panel-2) 62%,transparent);display:flex;flex-direction:column;gap:.4em}
 .coe__n{font-family:var(--display);font-weight:400;font-size:1.55em;line-height:1;color:var(--ember)}
 @supports (-webkit-text-stroke:1px red){.coe__n{color:transparent;-webkit-text-stroke:1px var(--ember)}}
@@ -652,6 +652,48 @@ img{display:block;max-width:100%}
 .extension-decision strong{flex:none;font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.12em;text-transform:uppercase;color:var(--on-panel-accent)}
 .extension-decision span{font-family:var(--sans);font-size:var(--fs-body);font-weight:600;line-height:1.3}
 
+/* Electric Vehicle Technology CoE */
+.ev-slide{--ev:#72b52b;--ev-blue:#1474a8}
+.ev-opener::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 70% at 92% 28%,color-mix(in srgb,var(--ev) 17%,transparent),transparent 72%),linear-gradient(135deg,transparent 58%,color-mix(in srgb,var(--ev-blue) 8%,transparent))}
+.ev-opener .slide__inner{gap:clamp(.75rem,2cqi,1.4rem)}
+.ev-brand-lockup{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(.65rem,1.5cqi,1rem);flex:1}
+.ev-logo{display:flex;align-items:center;justify-content:center;width:clamp(205px,27cqi,335px);min-height:clamp(58px,7cqi,82px);padding:.75rem 1rem;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 18px 38px -28px rgba(0,0,0,.7)}
+.ev-logo img{width:100%;height:auto}
+.ev-opener .divider__title{font-size:clamp(1.8rem,5.8cqi,4.6rem)}
+.ev-promise{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.55rem,1.35cqi,.9rem)}
+.ev-promise__item{position:relative;overflow:hidden;min-height:clamp(116px,12cqi,150px);padding:clamp(.8rem,1.6cqi,1.1rem);border:1px solid var(--line);border-radius:14px;background:var(--panel);display:flex;flex-direction:column;justify-content:flex-end}
+.ev-promise__item::before{content:attr(data-step);position:absolute;top:.28em;right:.3em;font-family:var(--display);font-size:clamp(2.7rem,6.5cqi,5.2rem);line-height:1;color:color-mix(in srgb,var(--ev) 20%,transparent)}
+.ev-promise__item b{position:relative;font-family:var(--sans);font-size:var(--fs-h3)}
+.ev-promise__item span{position:relative;margin-top:.25em;font-size:var(--fs-sm);line-height:1.35;color:var(--ink-dim)}
+.ev-glance{display:flex;align-items:center;gap:clamp(.8rem,2cqi,1.5rem);padding:.7em 1em;border-left:4px solid var(--ev);border-radius:10px;background:color-mix(in srgb,var(--panel) 88%,transparent)}
+.ev-glance strong{font-family:var(--display);font-size:clamp(1.8rem,4cqi,3rem);font-weight:400;color:var(--ink)}
+.ev-glance span{font-size:var(--fs-sm);line-height:1.35;color:var(--ink-dim)}
+.ev-systems-slide .slide__inner{gap:clamp(.65rem,1.4cqi,1rem)}
+.ev-systems-slide .h1{font-size:clamp(1.9rem,4.7cqi,3.8rem)}
+.ev-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.ev-fact{padding:.58em .75em;border-top:3px solid var(--ev);border-radius:9px;background:var(--panel)}
+.ev-fact b{display:block;font-family:var(--sans);font-size:var(--fs-sm);color:var(--ink)}
+.ev-fact span{display:block;margin-top:.2em;font-size:calc(var(--fs-sm)*.78);line-height:1.25;color:var(--ink-dim)}
+.ev-lab-grid{display:grid;grid-template-columns:1.52fr .8fr;gap:clamp(.6rem,1.35cqi,.95rem)}
+.ev-architecture{padding:clamp(.75rem,1.5cqi,1rem);border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.ev-architecture__head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.65em}
+.ev-architecture__head span{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.1em;text-transform:uppercase;color:var(--ev)}
+.ev-systems{display:grid;grid-template-columns:repeat(3,1fr);gap:.48rem}
+.ev-system{min-width:0;padding:.62em .68em;border:1px solid var(--line);border-radius:10px;background:var(--panel-2)}
+.ev-system i{display:block;font-family:var(--mono);font-size:var(--fs-eyebrow);font-style:normal;color:var(--ev-blue)}
+.ev-system b{display:block;margin:.2em 0;font-family:var(--sans);font-size:var(--fs-sm);line-height:1.15}
+.ev-system span{display:block;font-size:calc(var(--fs-sm)*.75);line-height:1.27;color:var(--ink-dim)}
+.ev-outcomes{padding:clamp(.8rem,1.55cqi,1.05rem);border:1px solid color-mix(in srgb,var(--ev) 50%,var(--line));border-radius:14px;background:color-mix(in srgb,var(--ev) 7%,var(--panel));display:flex;flex-direction:column;gap:.55em}
+.ev-outcomes__logo{width:min(210px,80%);padding:.5em .65em;border-radius:9px;background:#fff}
+.ev-outcomes__logo img{width:100%;height:auto}
+.ev-outcomes h3{font-family:var(--sans);font-size:var(--fs-h3);line-height:1.15}
+.ev-outcomes ul{display:grid;gap:.32em}
+.ev-outcomes li{position:relative;padding-left:1em;font-size:var(--fs-sm);line-height:1.3;color:var(--ink-dim)}
+.ev-outcomes li::before{content:"→";position:absolute;left:0;color:var(--ev)}
+.ev-build-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:10px;overflow:hidden;background:var(--line)}
+.ev-build-flow span{position:relative;padding:.62em .7em;background:var(--panel-ink);font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.07em;text-align:center;text-transform:uppercase;color:var(--on-ink)}
+.ev-build-flow span:not(:last-child)::after{content:"→";position:absolute;right:-.48em;z-index:2;color:var(--ev)}
+
 /* =========== CLOSE =========== */
 .close .slide__inner{justify-content:center;gap:clamp(1rem,3.4cqi,2.2rem)}
 .close .creds{gap:clamp(1rem,2cqi,1.6rem)}
@@ -710,6 +752,8 @@ img{display:block;max-width:100%}
 .ov-card[data-phase="a"] .ov-card__dot{background:var(--ember)}
 .ov-card[data-phase="b"] .ov-card__dot{background:var(--pulse)}
 .ov-card[data-phase="c"] .ov-card__dot{background:var(--gold)}
+.ov-card[data-phase="d"] .ov-card__dot{background:#72b52b}
+.ov-card[data-phase="e"] .ov-card__dot{background:#9a7420}
 .ov-card__t{font-family:var(--sans);font-weight:600;font-size:1.02rem;line-height:1.18}
 .ov-card__s{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
 
@@ -788,6 +832,8 @@ img{display:block;max-width:100%}
   .extension-headline{grid-template-columns:1fr;align-items:start}
   .extension-platform{justify-self:start}
   .extension-decision{align-items:flex-start;flex-direction:column}
+  .ev-promise,.ev-facts,.ev-systems,.ev-lab-grid,.ev-build-flow{grid-template-columns:1fr}
+  .ev-build-flow span:not(:last-child)::after{display:none}
   .industry-merge{grid-template-columns:1fr}
   .industry-path__steps{grid-template-columns:1fr 1fr}
   .industry-node:not(:last-child)::after{display:none}
@@ -923,6 +969,12 @@ img{display:block;max-width:100%}
               </div>
               <div class="coe">
                 <span class="coe__n">04</span>
+                <span class="coe__name">EV Technology CoE</span>
+                <span class="coe__tag">Design · Build · Deploy</span>
+                <span class="coe__est">With Skyy Rider Electric</span>
+              </div>
+              <div class="coe">
+                <span class="coe__n">05</span>
                 <span class="coe__name">PATHS CoE</span>
                 <span class="coe__tag">Design Thinking by Thinking Design</span>
                 <span class="coe__est">Est. August 2026</span>
@@ -1353,12 +1405,81 @@ img{display:block;max-width:100%}
           </div>
         </section>
 
-        <!-- ============ 12 · DIVIDER 04 ============ -->
-        <section class="slide divider" data-title="PATHS CoE" data-section="04 · PATHS CoE" data-phase="c" aria-roledescription="slide" aria-label="PATHS, section opener">
-          <div class="spine reveal"><span><b>04</b> &nbsp;/&nbsp; PATHS CoE</span></div>
+        <!-- ============ 10 · DIVIDER 04 · EV TECHNOLOGY ============ -->
+        <section class="slide divider ev-slide ev-opener" data-title="Electric Vehicle Technology CoE" data-section="04 · EV Technology CoE" data-phase="d" aria-roledescription="slide" aria-label="Electric Vehicle Technology Centre of Excellence, section opener">
+          <div class="spine reveal"><span><b>04</b> &nbsp;/&nbsp; EV Technology CoE</span></div>
           <div class="slide__inner">
             <div class="divider__top reveal">
               <span class="divider__num">04</span>
+              <div class="ev-brand-lockup">
+                <div class="ev-logo"><img src="assets/skyy-rider-logo.png" alt="Skyy Rider Electric"></div>
+                <div class="s-head">
+                  <p class="eyebrow">Industry-anchored Centre of Excellence</p>
+                  <h2 class="divider__title">Electric Vehicle<br><span class="em-serif">Technology CoE</span></h2>
+                </div>
+              </div>
+            </div>
+            <div class="divider__rule reveal"></div>
+            <p class="metaline reveal">A proposed 30-seat exclusive facility where students design, integrate, test and deploy electric-mobility systems with Skyy Rider Electric.</p>
+            <div class="ev-promise reveal" aria-label="Electric Vehicle Technology CoE operating model">
+              <div class="ev-promise__item" data-step="01"><b>Design the system</b><span>Vehicle architecture, powertrain, battery, charging, embedded control and connected mobility.</span></div>
+              <div class="ev-promise__item" data-step="02"><b>Build the prototype</b><span>Subsystem benches, battery-pack assembly, fabrication, 3D printing and vehicle integration.</span></div>
+              <div class="ev-promise__item" data-step="03"><b>Validate on the road</b><span>Simulation, HIL diagnostics, safety testing and industry-mentored deployment.</span></div>
+            </div>
+            <div class="ev-glance reveal"><strong>30</strong><span>exclusive learner stations · real EV platforms · industry hardware · one integrated lab-to-road workflow</span></div>
+          </div>
+        </section>
+
+        <!-- ============ 11 · EV TECHNOLOGY — SYSTEMS + OUTCOMES ============ -->
+        <section class="slide ev-slide ev-systems-slide" data-title="From lab to road" data-section="04 · EV Technology CoE" data-phase="d" aria-roledescription="slide" aria-label="Electric Vehicle Technology CoE infrastructure and outcomes">
+          <div class="spine reveal"><span><b>04</b> &nbsp;/&nbsp; EV Technology CoE</span></div>
+          <div class="slide__inner">
+            <div class="s-head reveal">
+              <p class="eyebrow">Infrastructure built around the vehicle</p>
+              <h2 class="h1">From lab <span class="em-serif">to road.</span></h2>
+              <p class="lede">Students work across the complete EV stack, then integrate it into a testable subsystem, prototype or mobility solution.</p>
+            </div>
+            <div class="ev-facts reveal">
+              <div class="ev-fact"><b>30-seat simulation studio</b><span>High-performance PCs · MATLAB/Simulink · ANSYS</span></div>
+              <div class="ev-fact"><b>Physical drivetrain laboratory</b><span>Motors · controllers · BMS · converters · inverters</span></div>
+              <div class="ev-fact"><b>Prototype and test environment</b><span>Battery assembly · chargers · HIL · fabrication bay</span></div>
+            </div>
+            <div class="ev-lab-grid reveal">
+              <article class="ev-architecture">
+                <div class="ev-architecture__head"><h3 class="h3">One connected EV system</h3><span>Learn through integration</span></div>
+                <div class="ev-systems">
+                  <div class="ev-system"><i>01</i><b>Energy</b><span>Cells, battery packs, BMS, thermal management and safety</span></div>
+                  <div class="ev-system"><i>02</i><b>Powertrain</b><span>Motors, motor control, inverters, DC–DC conversion and drivetrains</span></div>
+                  <div class="ev-system"><i>03</i><b>Charging</b><span>AC/DC charging, smart metering, grid and renewable integration</span></div>
+                  <div class="ev-system"><i>04</i><b>Intelligence</b><span>Embedded control, CAN, IoT, telematics and fleet analytics</span></div>
+                  <div class="ev-system"><i>05</i><b>Validation</b><span>Simulation, diagnostics, HIL, standards and safety testing</span></div>
+                  <div class="ev-system"><i>06</i><b>Fabrication</b><span>CAD, 3D printing, assembly, instrumentation and vehicle integration</span></div>
+                </div>
+              </article>
+              <aside class="ev-outcomes">
+                <div class="ev-outcomes__logo"><img src="assets/skyy-rider-logo.png" alt="Skyy Rider Electric"></div>
+                <span class="panel__k">Industry outcome</span>
+                <h3>Build something that moves</h3>
+                <ul>
+                  <li>Industry-defined projects and internships</li>
+                  <li>EV prototype or validated subsystem</li>
+                  <li>Connected-mobility demonstrator</li>
+                  <li>Startup, product and patent pathways</li>
+                  <li>Showcase-ready evidence of capability</li>
+                </ul>
+              </aside>
+            </div>
+            <div class="ev-build-flow reveal" aria-label="Electric vehicle development workflow"><span>Simulate</span><span>Bench test</span><span>Integrate</span><span>Prototype</span><span>Field validate</span></div>
+            <p class="source reveal">Concept based on the supplied Electric Vehicle Technology CoE brief. Industry partner: <a href="https://skyyriderelectric.com" target="_blank" rel="noopener noreferrer">Skyy Rider Electric ↗</a></p>
+          </div>
+        </section>
+
+        <!-- ============ 12 · DIVIDER 05 ============ -->
+        <section class="slide divider" data-title="PATHS CoE" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, section opener">
+          <div class="spine reveal"><span><b>05</b> &nbsp;/&nbsp; PATHS CoE</span></div>
+          <div class="slide__inner">
+            <div class="divider__top reveal">
+              <span class="divider__num">05</span>
               <div class="s-head">
                 <p class="eyebrow">Centre of Excellence</p>
                 <h2 class="divider__title">PATHS CoE<br><span class="em-serif">Design Thinking by Thinking Design</span></h2>
@@ -1371,8 +1492,8 @@ img{display:block;max-width:100%}
         </section>
 
         <!-- ============ 13 · PATHS — TWIN + LEARNING LOOP ============ -->
-        <section class="slide" data-title="Physical → Digital → Physical" data-section="04 · PATHS CoE" data-phase="c" aria-roledescription="slide" aria-label="PATHS, the physical digital physical loop">
-          <div class="spine reveal"><span><b>04</b> &nbsp;/&nbsp; PATHS CoE</span></div>
+        <section class="slide" data-title="Physical → Digital → Physical" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, the physical digital physical loop">
+          <div class="spine reveal"><span><b>05</b> &nbsp;/&nbsp; PATHS CoE</span></div>
           <div class="slide__inner">
             <div class="s-head reveal">
               <p class="eyebrow">Physical &rarr; Digital &rarr; Physical</p>
@@ -1437,8 +1558,8 @@ img{display:block;max-width:100%}
         </section>
 
         <!-- ============ 12 · PATHS — PLATFORM IN USE ============ -->
-        <section class="slide" data-title="The platform in use" data-section="04 · PATHS CoE" data-phase="c" aria-roledescription="slide" aria-label="PATHS, the platform in use">
-          <div class="spine reveal"><span><b>04</b> &nbsp;/&nbsp; PATHS CoE</span></div>
+        <section class="slide" data-title="The platform in use" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, the platform in use">
+          <div class="spine reveal"><span><b>05</b> &nbsp;/&nbsp; PATHS CoE</span></div>
           <div class="slide__inner">
             <div class="s-head reveal">
               <p class="eyebrow">Live at paths.cutm.ac.in</p>
@@ -1566,11 +1687,12 @@ img{display:block;max-width:100%}
               <div class="close__coe">Future Nexus CoE<span>Learn · Experience · Innovate</span></div>
               <div class="close__coe">VEDIC CoE<span>Virtual Engineering Design</span></div>
               <div class="close__coe">I5.0-4C Lab<span>Curiosity · Creativity · Competency</span></div>
+              <div class="close__coe">EV Technology CoE<span>Design · Build · Deploy</span></div>
               <div class="close__coe">PATHS CoE<span>Craft Intelligence Platform</span></div>
             </div>
             <p class="close__foot reveal">
               Presented to the Annual Academic Council, Biju Patnaik University of Technology · 10 September 2026<br>
-              sofn.vercel.app &nbsp;·&nbsp; coevedic.com &nbsp;·&nbsp; icccc.cutm.ac.in &nbsp;·&nbsp; paths.cutm.ac.in
+              sofn.vercel.app &nbsp;·&nbsp; coevedic.com &nbsp;·&nbsp; icccc.cutm.ac.in &nbsp;·&nbsp; skyyriderelectric.com &nbsp;·&nbsp; paths.cutm.ac.in
             </p>
           </div>
         </section>
@@ -1583,7 +1705,7 @@ img{display:block;max-width:100%}
   <header class="chrome">
     <span class="chrome__id"><img class="chrome__emblem" src="assets/cutm-emblem.png" alt="" aria-hidden="true"><b id="secLabel">Council Briefing</b></span>
     <div class="chrome__right">
-      <span class="chrome__count"><b id="cur">01</b> / <span id="total">11</span></span>
+      <span class="chrome__count"><b id="cur">01</b> / <span id="total">16</span></span>
       <button class="iconbtn" id="btnOverview" type="button" aria-label="Slide overview (O)">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       </button>
