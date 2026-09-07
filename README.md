@@ -10,7 +10,7 @@ served directly from **`assets/`**. No build step is required for deployment.
 ## Run
 
 Open `index.html` in any modern browser, or serve the folder with a static server.
-Slide URLs are `#1` … `#13`.
+Slide URLs are `#1` … `#14`.
 
 ## Controls
 
@@ -37,8 +37,8 @@ theme — switch to light first for an ink-friendly file.
 
 Images are referenced directly from `assets/`. Replacing a file with another file
 of the same name takes effect on the next Vercel deployment without regenerating
-`index.html`. If an asset is renamed or added, update `ASSETS` in
-`build-assets.py` and run `python3 build-assets.py` to refresh the CSS URL block.
+`index.html`. If an asset is renamed or added, update the asset URL block near the
+end of the stylesheet in `index.html`.
 
 ## Editing content
 

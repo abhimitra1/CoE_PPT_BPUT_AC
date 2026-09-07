@@ -1,3 +1,4 @@
+<script>/* theme: default to light; honour an explicit saved choice only */try{var t=localStorage.getItem('coe-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
 <title>Centres of Excellence</title>
 <meta name="description" content="A cinematic council presentation on Centurion University's four Centres of Excellence — Future Nexus, VEDIC, I5.0-4C Lab and PATHS — and a Build·Operate·Scale·Transfer proposal for BPUT.">
 
@@ -185,7 +186,7 @@ img{display:block;max-width:100%}
 .app.is-short .domains-slide .s-head{top:var(--chrome-safe-top,4.25rem)}
 .app.is-ultrawide .slide__inner{width:min(1480px,92%)}
 .app.is-ultrawide .domains-slide .slide__inner{width:100%}
-.deck[data-dir="prev"] .slide{transform:translate3d(-3.5%,0,0) scale(.986)}
+.deck[data-dir="prev"] .slide:not(.is-active){transform:translate3d(-3.5%,0,0) scale(.986)}
 .slide.is-active{
   opacity:1;visibility:visible;transform:none;filter:none;z-index:2;
   transition:opacity .5s ease, transform .62s cubic-bezier(.16,.84,.44,1), filter .5s ease, visibility 0s;
@@ -322,11 +323,13 @@ img{display:block;max-width:100%}
 .dcard__foot a:hover{text-decoration:underline}
 .dcard--xr .dcard__media{background-image:var(--img-lab-xr,none)}
 .dcard--id .dcard__media{background-image:var(--img-lab-id,none)}
+.dcard--bc .dcard__media{background-image:var(--img-lab-bc,none)}
 
 /* Slide 3: full-bleed domain triptych */
 .domains-slide{padding:0}
+.domains-slide::before{content:"";position:absolute;inset:0 0 auto;height:clamp(13.5rem,22cqi,20.5rem);z-index:4;pointer-events:none;background:linear-gradient(to bottom,rgba(3,8,16,.94) 0%,rgba(3,8,16,.82) 46%,rgba(3,8,16,.42) 76%,rgba(3,8,16,0) 100%)}
 .domains-slide .slide__inner{width:100%;max-width:none;gap:0;overflow:hidden}
-.domains-slide .s-head{position:absolute;z-index:5;top:clamp(4.8rem,7cqi,6.2rem);left:clamp(2.5rem,5cqi,4.4rem);right:clamp(1.5rem,4cqi,3.4rem);pointer-events:none;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.domains-slide .s-head{position:absolute;z-index:5;top:clamp(4.8rem,7cqi,6.2rem);left:clamp(2.5rem,5cqi,4.4rem);right:clamp(1.5rem,4cqi,3.4rem);pointer-events:none;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.92)}
 .domains-slide .s-head .eyebrow{color:#fff}
 .domains-slide .s-head .eyebrow::before{background:#fff}
 .domains-slide .s-head .h1{font-size:clamp(1.65rem,3.55cqi,3.25rem)}
@@ -338,7 +341,7 @@ img{display:block;max-width:100%}
 .domains-slide .dcard + .dcard{border-left:1px solid rgba(255,255,255,.28)}
 .domains-slide .dcard--xr{background-image:var(--img-lab-xr,none)}
 .domains-slide .dcard--id{background-image:var(--img-lab-id,none)}
-.domains-slide .dcard--bc{background-image:linear-gradient(145deg,rgba(9,25,48,.28),rgba(9,15,28,.84)),url("assets/logo-ethereum.svg");background-size:cover,58%;background-repeat:no-repeat;background-position:center,center 33%}
+.domains-slide .dcard--bc{background-image:var(--img-lab-bc,none)}
 .domains-slide .dcard__media{display:none}
 .domains-slide .dcard__body{height:100%;justify-content:flex-end;padding:clamp(1rem,2.15cqi,1.75rem);gap:.48em;color:#fff}
 .domains-slide .dcard__icon{display:none}
@@ -358,6 +361,38 @@ img{display:block;max-width:100%}
 .domains-slide[data-domain-step="2"] .dcard:nth-child(-n+2),
 .domains-slide[data-domain-step="3"] .dcard:nth-child(-n+3){opacity:1;transform:none;filter:none;pointer-events:auto}
 @media (prefers-reduced-motion:reduce){.domains-slide .dcard{transition:none}}
+
+/* Future Nexus: experience, facilities and venture outcomes */
+.experience-slide .slide__inner{gap:clamp(.8rem,1.8cqi,1.3rem)}
+.experience-slide .h1{font-size:clamp(2rem,5.4cqi,4.2rem)}
+.experience-labs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.55rem,1.35cqi,.95rem)}
+.experience-lab{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(160px,15.5cqi,206px);padding:clamp(.85rem,1.7cqi,1.2rem);border:1px solid var(--line);border-radius:14px;background-color:#091322;background-position:center;background-size:cover;display:flex;flex-direction:column;justify-content:flex-end;gap:.34em;color:#fff}
+.experience-lab::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(4,10,19,.34) 0%,rgba(4,10,19,.56) 42%,rgba(4,10,19,.93) 100%)}
+.experience-lab--xr{background-image:var(--img-exp-xr,none)}
+.experience-lab--print{background-image:var(--img-exp-print,none)}
+.experience-lab--cnc{background-image:var(--img-exp-cnc,none)}
+.experience-lab__n{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;color:#f2caac;text-shadow:0 1px 8px rgba(0,0,0,.72)}
+.experience-lab h3{line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.74)}
+.experience-lab__kit{font-family:var(--sans);font-size:calc(var(--fs-sm)*.92);line-height:1.32;color:rgba(255,255,255,.93);text-shadow:0 1px 7px rgba(0,0,0,.64)}
+.experience-lab .tags{margin-top:.18em}
+.experience-lab .tag{color:#fff;border-color:rgba(255,255,255,.46);background:rgba(4,10,19,.64);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.experience-outcomes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.65rem,1.55cqi,1.1rem)}
+.outcome-panel{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:clamp(.75rem,1.55cqi,1.05rem);display:flex;flex-direction:column;gap:.65em}
+.outcome-panel__head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+.outcome-panel__head span{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;color:var(--pulse)}
+.outcome-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5em}
+.outcome-item{min-width:0;font-family:var(--sans);font-size:var(--fs-sm);line-height:1.25;color:var(--ink);border:1px solid var(--line-2);border-radius:10px;padding:.58em .7em;background:var(--panel-2);text-decoration:none}
+.outcome-item:hover{border-color:var(--pulse)}
+.outcome-item b{display:block;font-weight:700;margin-bottom:.2em}
+.outcome-item small{display:block;color:var(--ink-dim);font-size:.88em;line-height:1.3}
+.startup-mark{height:clamp(22px,2.4cqi,30px);max-width:clamp(92px,10cqi,132px);margin-bottom:.42em;display:flex;align-items:center;justify-content:flex-start;border-radius:6px;overflow:hidden}
+.startup-mark img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:left center}
+.startup-mark--square{width:clamp(28px,3cqi,38px)}
+/* light chip only for logos with dark ink on a transparent ground */
+.startup-mark--chip{background:#fff;box-shadow:inset 0 0 0 1px rgba(11,26,48,.12);padding:.28em .5em;height:clamp(30px,3.1cqi,38px)}
+.startup-mark--chip.startup-mark--square{width:clamp(38px,3.9cqi,50px)}
+/* wide horizontal lockup that already carries its own background */
+.startup-mark--wide{height:clamp(27px,3cqi,37px);max-width:clamp(112px,13cqi,152px)}
 
 /* curriculum ladder — three domains side by side */
 .curric{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.9cqi,1.35rem)}
@@ -388,20 +423,19 @@ img{display:block;max-width:100%}
   background-color:rgba(255,255,255,.94);background-position:center;background-size:auto 72%;background-repeat:no-repeat;
   box-shadow:0 7px 20px -12px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.7);filter:saturate(1.06);transition:transform .2s ease,box-shadow .2s ease}
 .logochip:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 10px 24px -12px rgba(0,0,0,.82),inset 0 0 0 1px rgba(255,255,255,.82)}
-.logochip--unity{background-image:var(--img-lg-unity,none)}
-.logochip--unreal{background-image:var(--img-lg-unreal,none)}
-.logochip--ethereum{background-image:var(--img-lg-ethereum,none)}
-.logochip--solidity{background-image:var(--img-lg-solidity,none)}
-.logochip--unity,.logochip--unreal,.logochip--ethereum,.logochip--solidity{filter:brightness(0) saturate(100%)}
-.logochip--unity,.logochip--unreal,.logochip--ethereum,.logochip--solidity{width:clamp(108px,11.5cqi,148px);background-position:12px center;background-size:auto 58%}
-.logochip--unity::after,.logochip--unreal::after,.logochip--ethereum::after,.logochip--solidity::after{position:absolute;left:46%;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:clamp(.52rem,.72cqi,.7rem);font-weight:700;letter-spacing:-.01em;color:#0b1a30;white-space:nowrap}
+.logochip img{position:absolute;inset:14%;width:72%;height:72%;object-fit:contain}
+.logochip--unity,.logochip--unreal,.logochip--solidity{width:clamp(108px,11.5cqi,148px);background-color:#0b1a30;background-image:none}
+.logochip--unity img,.logochip--unreal img,.logochip--solidity img{left:10%;right:auto;width:27%}
+.logochip--ethereum{width:clamp(108px,11.5cqi,148px);background-color:rgba(255,255,255,.96);background-image:none}
+.logochip--ethereum img{inset:10%;width:80%;height:80%}
+.logochip--unity::after,.logochip--unreal::after,.logochip--solidity::after{position:absolute;left:46%;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:clamp(.52rem,.72cqi,.7rem);font-weight:700;letter-spacing:-.01em;color:#fff;white-space:nowrap}
 .logochip--unity::after{content:"Unity"}
 .logochip--unreal::after{content:"Unreal"}
-.logochip--ethereum::after{content:"Ethereum"}
 .logochip--solidity::after{content:"Solidity"}
-.logochip--hyper{background-image:var(--img-lg-hyper,none);width:clamp(94px,10.5cqi,132px);background-size:86% auto}
-.logochip--maya{background-image:var(--img-lg-maya,none);width:clamp(88px,9.8cqi,124px);background-size:84% auto}
-.logochip--3dx{background-image:var(--img-lg-3dx,none);width:clamp(104px,11.5cqi,146px);background-size:86% auto}
+.logochip--hyper{background-image:none;width:clamp(112px,11.5cqi,148px);overflow:hidden}
+.logochip--hyper img{inset:auto;left:50%;top:50%;width:230%;height:230%;transform:translate(-50%,-50%);object-fit:contain}
+.logochip--maya{background-image:none;width:clamp(88px,9.8cqi,124px)}
+.logochip--3dx{background-image:none;width:clamp(104px,11.5cqi,146px)}
 
 /* photo strip on top of a lab card */
 .labshot{height:clamp(48px,6.6cqi,74px);margin:-.15em 0 .15em;border-radius:10px;border:1px solid var(--line);
@@ -447,11 +481,8 @@ img{display:block;max-width:100%}
 .industry-path__partners .logochip--3dx,.industry-path__partners .logochip--hyper{width:clamp(72px,6.7cqi,92px)}
 .industry-path__label{margin-right:auto;font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
 
-/* ---- twin motif (physical / digital) ---- */
-.twin{position:relative;width:1.5em;height:1.5em;flex:none}
-.twin::before,.twin::after{content:"";position:absolute;inset:0;border-radius:50%}
-.twin::before{background:var(--ember);left:-.18em;top:.14em}
-.twin::after{border:1.5px solid var(--pulse);left:.2em;top:-.14em}
+/* ---- chrome emblem (Centurion University crest) ---- */
+.chrome__emblem{width:1.9em;height:1.9em;flex:none;object-fit:contain;display:block}
 
 /* ---- photo slot : real photo on the open web, designed placeholder in-frame ---- */
 .photo{
@@ -542,7 +573,7 @@ img{display:block;max-width:100%}
 .vedic-opener .divider__top{align-items:center}
 .vedic-opener .divider__num{font-size:clamp(4rem,16cqi,12rem)}
 .vedic-lockup{display:flex;align-items:center;flex:1}
-.vedic-lockup .divider__title{font-size:clamp(1.8rem,4.7cqi,4rem)}
+.vedic-main-logo{display:block;flex:none;width:clamp(240px,42cqi,470px);height:clamp(96px,18cqi,196px);background:var(--img-vedic-main,none) left center/contain no-repeat}
 .vedic-affiliates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(.55rem,1.3cqi,.9rem);align-items:center}
 .vedic-affiliate{min-height:clamp(62px,7cqi,92px);display:flex;align-items:center;justify-content:center;padding:.45rem;border-radius:18px;background:rgba(255,255,255,.92);box-shadow:0 12px 28px -20px rgba(0,0,0,.65)}
 .vedic-affiliate__logo{display:block;width:100%;height:clamp(46px,5.8cqi,72px);background-position:center;background-size:contain;background-repeat:no-repeat}
@@ -570,7 +601,7 @@ img{display:block;max-width:100%}
 .chrome>*{pointer-events:auto}
 .chrome__id{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:.6em}
 .chrome__id b{color:var(--ink);font-weight:500}
-.chrome__id .twin{font-size:.66rem}
+.chrome__id .chrome__emblem{width:1.7em;height:1.7em}
 .chrome__right{display:flex;align-items:center;gap:.4rem}
 .chrome__count{font-size:.78rem;color:var(--ink-dim);font-variant-numeric:tabular-nums;letter-spacing:.06em;padding-right:.35rem}
 .chrome__count b{color:var(--ink);font-weight:500}
@@ -644,7 +675,8 @@ img{display:block;max-width:100%}
   .reveal{opacity:1;transform:none}
   .spine{display:none}
   .nav-edge,.hint{display:none}
-  .grid-3,.split,.panel-grid,.pills,.cover__coes,.stats,.flow,.ptn,.curric,.dgrid{grid-template-columns:1fr}
+  .grid-3,.split,.panel-grid,.pills,.cover__coes,.stats,.flow,.ptn,.curric,.dgrid,.experience-labs,.experience-outcomes{grid-template-columns:1fr}
+  .outcome-list{grid-template-columns:1fr}
   .flow__step:not(:last-child)::after{display:none}
   .grid-2{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -659,6 +691,7 @@ img{display:block;max-width:100%}
   .fig svg{max-height:none}
   .cover__bg::after{background:linear-gradient(to top,var(--deep),color-mix(in srgb,var(--deep) 40%,transparent) 70%)}
   .domains-slide{padding:5.4rem 1.3rem 4rem}
+  .domains-slide::before{display:none}
   .domains-slide .slide__inner{gap:1rem;overflow:visible}
   .domains-slide .s-head{position:static;color:var(--ink);text-shadow:none;pointer-events:auto}
   .domains-slide .s-head .eyebrow{color:var(--ember)}
@@ -706,16 +739,19 @@ img{display:block;max-width:100%}
 }
 </style>
 
-<!-- Asset file URLs — generated by build-assets.py from the assets/ folder.
-     Re-run only after adding, removing, or renaming an asset. -->
+<!-- Asset file URLs. Keep these paths in sync when files are renamed. -->
 <style id="asset-uris">
 /*__ASSETS_START__*/
 :root{
-  --img-cover:url("assets/lab_photos/XR-Lab-Development and Testing Lab.png");
+  --img-cover:url("assets/lab_photos/CUTM_Main_Block_Arial_Photo.png");
   --img-div01:url("assets/lab_photos/XR-Lab-Thinkers Area.png");
-  --img-lab-xr:url("assets/lab_photos/XR-Lab-Development and Testing Area.jpeg");
+  --img-lab-xr:url("assets/lab_photos/XR-Lab-Development and Testing Area.png");
   --img-lab-id:url("assets/lab_photos/Industrial Design Lab.png");
-  --img-xr-zone:url("assets/lab_photos/XR Lab-Experience Zone.jpeg");
+  --img-lab-bc:url("assets/lab_photos/Blockchain-Lab.jpeg");
+  --img-exp-xr:url("assets/lab_photos/XR_Experience_Lab.png");
+  --img-exp-print:url("assets/lab_photos/3d_printing.jpeg");
+  --img-exp-cnc:url("assets/lab_photos/cnc_machining.jpeg");
+  --img-xr-zone:url("assets/lab_photos/XR Lab-Experience Zone.png");
   --img-xr-headset:url("assets/lab_photos/XR-Lab-Experience Zone.jpeg");
   --img-fn-logo:url("assets/logo-light.png");
   --img-fn-logo-dark:url("assets/logo-dark.png");
@@ -725,9 +761,10 @@ img{display:block;max-width:100%}
   --img-vedic-ds:url("assets/vedic_logos/ds_logo.png");
   --img-vedic-gtet:url("assets/vedic_logos/gtet_logo.png");
   --img-vedic-pmec:url("assets/vedic_logos/pmec_logo.png");
+  --img-vedic-main:url("assets/vedic_logos/vedic_logo.png");
   --img-lg-unity:url("assets/logo-unity.svg");
   --img-lg-unreal:url("assets/logo-unreal.svg");
-  --img-lg-ethereum:url("assets/logo-ethereum.svg");
+  --img-lg-ethereum:url("assets/logo-ethereum.png");
   --img-lg-solidity:url("assets/logo-solidity.svg");
   --img-lg-hyper:url("assets/logo-hyperledger.svg");
   --img-lg-maya:url("assets/logo-maya.png");
@@ -810,7 +847,7 @@ img{display:block;max-width:100%}
               <div class="industry-promise">
                 <h3 class="industry-promise__title">Learn. Experience. <span>Innovate.</span></h3>
                 <p>Credit-bearing learning, production-standard labs and industry-led innovation in one integrated ecosystem.</p>
-                <span class="industry-promise__stats">500+ students · 15+ partners · 7 ventures</span>
+                <span class="industry-promise__stats">87% practical-based credits · 6 student-founded companies · verified by Avalanche &amp; Dassault Systèmes</span>
               </div>
               <div class="industry-path">
                 <p class="eyebrow">Built with industry</p>
@@ -822,11 +859,11 @@ img{display:block;max-width:100%}
                 </div>
                 <div class="industry-path__partners" aria-label="Selected technology partners and platforms">
                   <span class="industry-path__label">Selected platforms</span>
-                  <span class="logochip logochip--unity" role="img" aria-label="Unity"></span>
-                  <span class="logochip logochip--unreal" role="img" aria-label="Unreal Engine"></span>
-                  <span class="logochip logochip--3dx" role="img" aria-label="Dassault 3DEXPERIENCE"></span>
-                  <span class="logochip logochip--ethereum" role="img" aria-label="Ethereum"></span>
-                  <span class="logochip logochip--hyper" role="img" aria-label="Hyperledger"></span>
+                  <span class="logochip logochip--unity" role="img" aria-label="Unity"><img src="assets/logo-unity.svg" alt=""></span>
+                  <span class="logochip logochip--unreal" role="img" aria-label="Unreal Engine"><img src="assets/logo-unreal.svg" alt=""></span>
+                  <span class="logochip logochip--3dx" role="img" aria-label="Dassault 3DEXPERIENCE"><img src="assets/logo-3dx.png" alt=""></span>
+                  <span class="logochip logochip--ethereum" role="img" aria-label="Ethereum"><img src="assets/logo-ethereum.png" alt=""></span>
+                  <span class="logochip logochip--hyper" role="img" aria-label="Hyperledger"><img src="assets/logo-hyperledger.svg" alt=""></span>
                 </div>
               </div>
             </div>
@@ -834,13 +871,13 @@ img{display:block;max-width:100%}
         </section>
 
         <!-- ============ 3 · FUTURE NEXUS — DOMAINS ============ -->
-        <section class="slide domains-slide" data-domain-step="1" data-title="Domains and credits" data-section="01 · Future Nexus CoE" data-phase="a" aria-roledescription="slide" aria-label="Future Nexus domain credits and subject keywords">
+        <section class="slide domains-slide" data-domain-step="1" data-title="Learn" data-section="01 · Future Nexus CoE" data-phase="a" aria-roledescription="slide" aria-label="Future Nexus Learn pathways, credits, tools and shipped outcomes">
           <div class="spine reveal"><span><b>01</b> &nbsp;/&nbsp; Future Nexus CoE</span></div>
           <div class="slide__inner">
             <div class="s-head reveal">
-              <p class="eyebrow">Curriculum · production labs · innovation</p>
-              <h2 class="h1">Three domains, <span class="em-serif">22 credits each</span></h2>
-              <p class="domain-shared">rapid prototyping · structured testing · hackathons · patents</p>
+              <p class="eyebrow">Learn · credit-bearing domain pathways</p>
+              <h2 class="h1">Learn the future <span class="em-serif">by building it</span></h2>
+              <p class="domain-shared">Three domains · 13% theory · 87% lab, build and capstone · every student ships</p>
             </div>
             <div class="dgrid reveal">
 
@@ -857,16 +894,16 @@ img{display:block;max-width:100%}
                     <span class="dpill">Mixed Reality</span><span class="dpill">WebXR</span>
                   </div>
                   <div class="dcard__logos" aria-label="Technology and tools: Unity, Unreal Engine and Autodesk Maya">
-                    <span class="logochip logochip--unity" role="img" aria-label="Unity"></span>
-                    <span class="logochip logochip--unreal" role="img" aria-label="Unreal Engine"></span>
-                    <span class="logochip logochip--maya" role="img" aria-label="Autodesk Maya"></span>
+                    <span class="logochip logochip--unity" role="img" aria-label="Unity"><img src="assets/logo-unity.svg" alt=""></span>
+                    <span class="logochip logochip--unreal" role="img" aria-label="Unreal Engine"><img src="assets/logo-unreal.svg" alt=""></span>
+                    <span class="logochip logochip--maya" role="img" aria-label="Autodesk Maya"><img src="assets/logo-maya.png" alt=""></span>
                   </div>
                   <div class="domain-lab" aria-label="XR Lab specifications">
-                    <div class="domain-lab__item"><b>Output</b><span>XR builds · SDK demos · prototypes</span></div>
+                    <div class="domain-lab__item"><b>Output</b><span>Live build on target hardware or browser</span></div>
                     <div class="domain-lab__item"><b>Seats</b><span>40</span></div>
                     <div class="domain-lab__item"><b>Lab</b><span>RTX 5090 · Quest 3 · HoloLens 2</span></div>
                   </div>
-                  <div class="dcard__foot"><strong>22 credits</strong><a href="https://sofn.vercel.app/domain-xr.html" target="_blank" rel="noopener noreferrer">Curriculum details ↗</a></div>
+                  <div class="dcard__foot"><strong>20 credits · 6 courses</strong><a href="https://sofn.vercel.app/domain-xr.html" target="_blank" rel="noopener noreferrer">Curriculum details ↗</a></div>
                 </div>
               </article>
 
@@ -883,15 +920,15 @@ img{display:block;max-width:100%}
                     <span class="dpill">Digital Twin</span><span class="dpill">PLM &amp; BOM</span>
                   </div>
                   <div class="dcard__logos" aria-label="Technology and tools: Dassault Systèmes 3DEXPERIENCE, CATIA, SIMULIA, DYMOLA and ENOVIA">
-                    <span class="logochip logochip--3dx" role="img" aria-label="Dassault Systèmes 3DEXPERIENCE"></span>
+                    <span class="logochip logochip--3dx" role="img" aria-label="Dassault Systèmes 3DEXPERIENCE"><img src="assets/logo-3dx.png" alt=""></span>
                     <span class="tag">CATIA</span><span class="tag">SIMULIA</span><span class="tag">DYMOLA</span><span class="tag">ENOVIA</span>
                   </div>
                   <div class="domain-lab" aria-label="Industrial Design Lab specifications">
-                    <div class="domain-lab__item"><b>Output</b><span>CAD models · digital twins · documentation</span></div>
+                    <div class="domain-lab__item"><b>Output</b><span>Validated 3DX model · FEA/CFD · BOM · pitch</span></div>
                     <div class="domain-lab__item"><b>Seats</b><span>40</span></div>
                     <div class="domain-lab__item"><b>Lab</b><span>3DEXPERIENCE workstations · 3D printers</span></div>
                   </div>
-                  <div class="dcard__foot"><strong>22 credits</strong><a href="https://sofn.vercel.app/domain-industrial.html" target="_blank" rel="noopener noreferrer">Curriculum details ↗</a></div>
+                  <div class="dcard__foot"><strong>22 credits · 100-day GTM</strong><a href="https://sofn.vercel.app/domain-industrial.html" target="_blank" rel="noopener noreferrer">Curriculum details ↗</a></div>
                 </div>
               </article>
 
@@ -908,25 +945,84 @@ img{display:block;max-width:100%}
                     <span class="dpill">DeFi &amp; Security</span><span class="dpill">Hyperledger Fabric</span>
                   </div>
                   <div class="dcard__logos" aria-label="Technology and tools: Ethereum, Solidity and Hyperledger Fabric">
-                    <span class="logochip logochip--ethereum" role="img" aria-label="Ethereum"></span>
-                    <span class="logochip logochip--solidity" role="img" aria-label="Solidity"></span>
-                    <span class="logochip logochip--hyper" role="img" aria-label="Hyperledger Fabric"></span>
+                    <span class="logochip logochip--ethereum" role="img" aria-label="Ethereum"><img src="assets/logo-ethereum.png" alt=""></span>
+                    <span class="logochip logochip--solidity" role="img" aria-label="Solidity"><img src="assets/logo-solidity.svg" alt=""></span>
+                    <span class="logochip logochip--hyper" role="img" aria-label="Hyperledger Fabric"><img src="assets/logo-hyperledger.svg" alt=""></span>
                   </div>
                   <div class="domain-lab" aria-label="Blockchain Lab specifications">
-                    <div class="domain-lab__item"><b>Output</b><span>Smart contracts · dApps · audits</span></div>
+                    <div class="domain-lab__item"><b>Output</b><span>Verified testnet deployment · live public URL</span></div>
                     <div class="domain-lab__item"><b>Seats</b><span>40</span></div>
                     <div class="domain-lab__item"><b>Lab</b><span>RTX 4080 · Fabric network · i7 workstations</span></div>
                   </div>
-                  <div class="dcard__foot"><strong>22 credits</strong><a href="https://sofn.vercel.app/domain-blockchain.html" target="_blank" rel="noopener noreferrer">Curriculum details ↗</a></div>
+                  <div class="dcard__foot"><strong>20 credits · 6 courses</strong><a href="https://sofn.vercel.app/domain-blockchain.html" target="_blank" rel="noopener noreferrer">Curriculum details ↗</a></div>
                 </div>
               </article>
 
             </div>
-            <p class="source reveal">Credit-bearing domain pathways integrated into the degree curriculum.</p>
+            <p class="source reveal">Production tools from week one · shipped artefacts replace written-only assessment · capstones receive external review. Source: Future Nexus Labs Best Practices.</p>
           </div>
         </section>
 
-        <!-- ============ 4 · DIVIDER 02 ============ -->
+        <!-- ============ 4 · FUTURE NEXUS — EXPERIENCE + INNOVATE ============ -->
+        <section class="slide experience-slide" data-title="Experience and Innovate" data-section="01 · Future Nexus CoE" data-phase="a" aria-roledescription="slide" aria-label="Future Nexus experience labs, projects and startups">
+          <div class="spine reveal"><span><b>01</b> &nbsp;/&nbsp; Future Nexus CoE</span></div>
+          <div class="slide__inner">
+            <div class="s-head reveal">
+              <p class="eyebrow">Learning by building</p>
+              <h2 class="h1">Experience <span class="em-serif">and Innovate</span></h2>
+            </div>
+
+            <div class="experience-labs reveal">
+              <article class="experience-lab experience-lab--xr">
+                <span class="experience-lab__n">01 · Immersive systems</span>
+                <h3 class="h3">XR</h3>
+                <p class="experience-lab__kit">HTC Vive Pro · Meta Quest 2 / 3 / Pro</p>
+                <div class="tags"><span class="tag">AR</span><span class="tag">VR</span><span class="tag">MR</span></div>
+              </article>
+              <article class="experience-lab experience-lab--print">
+                <span class="experience-lab__n">02 · Additive manufacturing</span>
+                <h3 class="h3">3D Printing Lab</h3>
+                <p class="experience-lab__kit">Stratasys F370 · Markforged X7 · EOS M 290</p>
+                <div class="tags"><span class="tag">Plastic</span><span class="tag">Composite</span><span class="tag">Metal</span></div>
+              </article>
+              <article class="experience-lab experience-lab--cnc">
+                <span class="experience-lab__n">03 · Advanced manufacturing</span>
+                <h3 class="h3">Precision Machining Lab</h3>
+                <p class="experience-lab__kit">MuTech 6 · 5-axis CNC</p>
+                <div class="tags"><span class="tag">Prototype</span><span class="tag">Machine</span><span class="tag">Validate</span></div>
+              </article>
+            </div>
+
+            <div class="experience-outcomes reveal">
+              <article class="outcome-panel">
+                <div class="outcome-panel__head"><h3 class="h3">Capstone Projects</h3><span>Problems with real users</span></div>
+                <div class="outcome-list">
+                  <span class="outcome-item"><b>Tribal Museum, Bhubaneswar</b><small>Immersive VR and mobile-AR heritage experience</small></span>
+                  <span class="outcome-item"><b>Konark Sun Temple</b><small>Reality capture, BIM and AR/VR reconstruction</small></span>
+                  <span class="outcome-item"><b>Agri Credit</b><small>Transparent on-chain credit rails for farmers</small></span>
+                  <span class="outcome-item"><b>Farm-to-Fork Traceability</b><small>Blockchain provenance from field to customer</small></span>
+                  <span class="outcome-item"><b>Agri-Drone &amp; E-Rickshaw</b><small>Validated UAV and electric-mobility assemblies</small></span>
+                  <span class="outcome-item"><b>Industrial Training Simulators</b><small>XR safety and assembly training for industry</small></span>
+                </div>
+              </article>
+              <article class="outcome-panel">
+                <div class="outcome-panel__head"><h3 class="h3">Startups</h3><span>From lab to launch</span></div>
+                <div class="outcome-list">
+                  <a class="outcome-item" href="https://thegttech.com" target="_blank" rel="noopener noreferrer"><span class="startup-mark"><img src="assets/projects-logo/GT-Tech.png" alt=""></span><b>GramTarang Technologies ↗</b><small>Industry 4.0, XR, robotics and automation</small></a>
+                  <a class="outcome-item" href="https://superbeeaeronautics.com" target="_blank" rel="noopener noreferrer"><span class="startup-mark startup-mark--square startup-mark--chip"><img src="assets/projects-logo/SuperBee-Aeronautics.png" alt=""></span><b>SuperBee Aeronautics ↗</b><small>Precision-agriculture and delivery drones</small></a>
+                  <a class="outcome-item" href="https://www.arcenpay.com" target="_blank" rel="noopener noreferrer"><span class="startup-mark startup-mark--chip"><img src="https://www.arcenpay.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbglogo.0dxp87k7wm8-y.png&amp;w=256&amp;q=75" alt=""></span><b>ArcenPay ↗</b><small>Non-custodial Web3 billing infrastructure</small></a>
+                  <a class="outcome-item" href="https://motionwave.studio" target="_blank" rel="noopener noreferrer"><span class="startup-mark startup-mark--wide"><img src="assets/projects-logo/MotionWave.Studio_Logo_4_Dark.png" alt=""></span><b>MotionWave Studios ↗</b><small>Video production, animation and digital content studio</small></a>
+                  <a class="outcome-item" href="https://campustocrypto.com" target="_blank" rel="noopener noreferrer"><span class="startup-mark startup-mark--square"><img src="assets/projects-logo/CampusToCrypto (2).png" alt=""></span><b>Campus to Crypto ↗</b><small>Student-led Web3 community and hackathons</small></a>
+                  <a class="outcome-item" href="https://sowsaathi.com" target="_blank" rel="noopener noreferrer"><b>SowSaathi ↗</b><small>Direct-to-consumer platform for farmers</small></a>
+                </div>
+              </article>
+            </div>
+
+            <p class="source reveal">Lab access outlasts the degree · verifier partnerships open grant and investment routes · team-based cohorts are built to co-found. Source: Future Nexus Labs Best Practices.</p>
+          </div>
+        </section>
+
+        <!-- ============ 5 · DIVIDER 02 ============ -->
         <section class="slide divider vedic-opener" data-title="VEDIC CoE" data-section="02 · VEDIC CoE" data-phase="b" aria-roledescription="slide" aria-label="VEDIC, section opener">
           <div class="spine reveal"><span><b>02</b> &nbsp;/&nbsp; VEDIC CoE</span></div>
           <div class="slide__inner">
@@ -934,10 +1030,6 @@ img{display:block;max-width:100%}
               <span class="divider__num">02</span>
               <div class="vedic-lockup">
                 <span class="vedic-main-logo" role="img" aria-label="BPUT Centre of Excellence on VEDIC — Aerospace, Automotive, Defence and Allied Industries"></span>
-                <div class="s-head">
-                  <p class="eyebrow">BPUT Centre of Excellence on</p>
-                  <h2 class="divider__title">VEDIC<br><span class="em-serif">Aerospace, Automotive, Defence and Allied Industries</span></h2>
-                </div>
               </div>
             </div>
             <div class="divider__rule reveal"></div>
@@ -1379,7 +1471,7 @@ img{display:block;max-width:100%}
 
   <!-- ---- player chrome ---- -->
   <header class="chrome">
-    <span class="chrome__id"><span class="twin" aria-hidden="true"></span><b id="secLabel">Council Briefing</b></span>
+    <span class="chrome__id"><img class="chrome__emblem" src="assets/cutm-emblem.png" alt="" aria-hidden="true"><b id="secLabel">Council Briefing</b></span>
     <div class="chrome__right">
       <span class="chrome__count"><b id="cur">01</b> / <span id="total">11</span></span>
       <button class="iconbtn" id="btnOverview" type="button" aria-label="Slide overview (O)">
@@ -1494,11 +1586,13 @@ img{display:block;max-width:100%}
   document.getElementById('total').textContent = n;
   var pad = function (i) { return String(i + 1).padStart(2, '0'); };
 
-  /* ---- theme ---- */
+  /* ---- theme : light by default, dark only if the viewer chose it ---- */
   try {
     var saved = localStorage.getItem('coe-theme');
-    if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
-  } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
   function toggleTheme() {
     var root = document.documentElement;
     var now = root.getAttribute('data-theme');
