@@ -549,6 +549,68 @@ img{display:block;max-width:100%}
 .i5-build-panel .panel__k{display:flex;align-items:center;gap:.65em}
 .i5-build-panel .panel__k::after{content:"Robotic welding cell";margin-left:auto;padding:.28em .6em;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.78em;letter-spacing:.08em;color:var(--on-ink-dim);background:rgba(4,10,19,.44)}
 
+/* PATHS CoE — supplied studio and physical/digital/physical evidence */
+.paths-opener{color:#fff}
+.paths-opener .paths__bg{background-image:var(--img-paths-studio,none);background-position:center}
+.paths-opener .paths__bg::after{background:
+  linear-gradient(102deg,rgba(4,10,19,.97) 0%,rgba(4,10,19,.84) 39%,rgba(4,10,19,.34) 74%,rgba(4,10,19,.48) 100%),
+  linear-gradient(to top,rgba(4,10,19,.9),transparent 60%)}
+.paths-opener .slide__inner{isolation:isolate}
+.paths-opener .divider__top{max-width:min(880px,74%)}
+.paths-opener .eyebrow,.paths-opener .em-serif{color:#f2a779}
+.paths-opener .divider__rule{background:linear-gradient(90deg,#f2a779,#62ded2,transparent)}
+.paths-opener .metaline{color:rgba(255,255,255,.82);text-shadow:0 2px 14px rgba(0,0,0,.88)}
+
+/* PATHS learning loop — a plain-language physical/digital/physical story */
+.paths-loop-slide{background:
+  radial-gradient(38% 58% at 16% 82%,color-mix(in srgb,var(--pulse) 11%,transparent),transparent 74%),
+  radial-gradient(42% 64% at 88% 18%,color-mix(in srgb,var(--ember) 10%,transparent),transparent 76%)}
+.paths-loop-slide .slide__inner{justify-content:center;gap:clamp(.55rem,1.35cqi,1rem)}
+.paths-loop-slide .s-head{gap:.25em}
+.paths-loop-slide .h1{font-size:clamp(1.7rem,3.8cqi,3.2rem)}
+.paths-loop-legacy{display:none !important}
+.pdp-strip{display:grid;grid-template-columns:1fr auto 1.18fr auto 1fr;align-items:stretch;gap:.5rem}
+.pdp-step{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.65rem;padding:.65rem .8rem;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--panel) 88%,transparent)}
+.pdp-step__n{font-family:var(--display);font-size:clamp(1.5rem,3cqi,2.6rem);line-height:1;color:var(--ember)}
+.pdp-step b{display:block;font-size:var(--fs-body);color:var(--ink);line-height:1.1}
+.pdp-step small{display:block;margin-top:.2em;font-size:var(--fs-sm);line-height:1.25;color:var(--ink-dim)}
+.pdp-step--digital{border-color:color-mix(in srgb,var(--pulse) 55%,var(--line));background:color-mix(in srgb,var(--pulse) 7%,var(--panel))}
+.pdp-step--digital .pdp-step__n{color:var(--pulse)}
+.pdp-arrow{align-self:center;font-family:var(--mono);font-size:clamp(1.3rem,2.1cqi,2rem);color:var(--ember)}
+.paths-loop-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:clamp(.65rem,1.5cqi,1.15rem);min-height:0;align-items:stretch}
+.loop-stage{position:relative;min-height:0;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--panel) 88%,transparent);
+  overflow:hidden;box-shadow:0 20px 44px -34px rgba(11,26,48,.42)}
+.loop-stage::before{content:"";position:absolute;inset:8% 11%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--panel) 92%,transparent) 0 37%,transparent 38%);pointer-events:none}
+.loop-stage svg{position:relative;display:block;width:100%;height:100%;max-height:none;min-height:clamp(300px,37cqi,470px)}
+.loop-stage .loop-track{fill:none;stroke:var(--line);stroke-width:2}
+.loop-stage .loop-arc{fill:none;stroke-width:10;stroke-linecap:round}
+.loop-stage .loop-node{stroke:var(--panel);stroke-width:4}
+.loop-stage .loop-num{font-family:var(--mono);font-size:11px;fill:var(--ink-dim)}
+.loop-stage .loop-label{font-family:var(--sans);font-size:12px;font-weight:600;fill:var(--ink)}
+.loop-stage .loop-hub-eye{font-family:var(--mono);font-size:10px;letter-spacing:.18em;fill:var(--ink-dim)}
+.loop-stage .loop-hub-title{font-family:var(--display);font-size:29px;fill:var(--ink)}
+.loop-stage .loop-hub-copy{font-family:var(--sans);font-size:11px;fill:var(--ink-dim)}
+.loop-stage__key{position:absolute;left:1rem;right:1rem;bottom:.7rem;display:flex;justify-content:center;gap:1rem;font-family:var(--mono);font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.05em;color:var(--ink-dim)}
+.loop-stage__key i{display:inline-block;width:.8em;height:.8em;margin-right:.35em;border-radius:50%;vertical-align:-.05em}
+.paths-value-stack{display:flex;flex-direction:column;gap:.55rem;min-height:0}
+.paths-value{display:grid;grid-template-columns:2.1rem 1fr;gap:.6rem;align-items:start;padding:.56rem .7rem;border-left:3px solid var(--ember);background:color-mix(in srgb,var(--panel-2) 78%,transparent);border-radius:0 10px 10px 0}
+.paths-value__n{font-family:var(--mono);font-size:var(--fs-sm);color:var(--ember)}
+.paths-value b{display:block;font-size:var(--fs-sm);color:var(--ink);line-height:1.18}
+.paths-value span{display:block;margin-top:.12em;font-size:calc(var(--fs-sm) * .9);line-height:1.28;color:var(--ink-dim)}
+.paths-tech{margin-top:auto;padding:.7rem .8rem;border-radius:13px;background:var(--panel-ink);color:var(--on-ink)}
+.paths-tech__head{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.55rem}
+.paths-tech__head b{font-size:var(--fs-sm)}
+.paths-tech__head span{font-family:var(--mono);font-size:var(--fs-eyebrow);color:var(--on-panel-accent);text-transform:uppercase;letter-spacing:.08em}
+.paths-tech p{font-size:calc(var(--fs-sm) * .9);line-height:1.35;color:var(--on-ink-dim)}
+.paths-tech p + p{margin-top:.32em}
+.paths-tech strong{color:var(--on-ink);font-weight:600}
+.app.is-short .paths-loop-slide .slide__inner{gap:.45rem}
+.app.is-short .paths-loop-slide .h1{font-size:clamp(1.55rem,3cqi,2.5rem)}
+.app.is-short .pdp-step{padding:.45rem .6rem}
+.app.is-short .loop-stage svg{min-height:clamp(270px,28cqi,355px)}
+.app.is-short .paths-value{padding:.4rem .55rem}
+.app.is-short .paths-tech{padding:.55rem .65rem}
+
 /* Future Nexus wordmark — white art on dark theme, black art on light theme */
 .fn-mark{width:clamp(128px,18cqi,224px);height:clamp(34px,4.6cqi,58px);
   background:var(--img-fn-logo,none) left center/contain no-repeat}
@@ -573,6 +635,10 @@ img{display:block;max-width:100%}
 .cover__sub{font-size:var(--fs-lede);color:var(--ink-dim);max-width:54ch;line-height:1.5}
 .cover__coes{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(.45rem,1.2cqi,.85rem)}
 .coe{border:1px solid var(--line);border-radius:12px;padding:clamp(.75rem,1.8cqi,1.2rem);background:color-mix(in srgb,var(--panel-2) 62%,transparent);display:flex;flex-direction:column;gap:.4em}
+.coe[type="button"]{width:100%;text-align:left;transition:transform .2s ease,border-color .2s ease,background-color .2s ease,box-shadow .2s ease}
+.coe[type="button"]:hover{transform:translateY(-3px);border-color:var(--pulse);background:color-mix(in srgb,var(--panel-2) 78%,var(--pulse) 6%);box-shadow:0 12px 28px -20px color-mix(in srgb,var(--pulse) 62%,transparent)}
+.coe[type="button"]:active{transform:translateY(-1px)}
+.coe[type="button"]:focus-visible{outline:2px solid var(--pulse);outline-offset:3px}
 .coe__n{font-family:var(--display);font-weight:400;font-size:1.55em;line-height:1;color:var(--ember)}
 @supports (-webkit-text-stroke:1px red){.coe__n{color:transparent;-webkit-text-stroke:1px var(--ember)}}
 .coe__name{font-family:var(--sans);font-weight:600;font-size:var(--fs-h3)}
@@ -856,6 +922,10 @@ img{display:block;max-width:100%}
   .extension-decision{align-items:flex-start;flex-direction:column}
   .ev-promise,.ev-facts,.ev-systems,.ev-lab-grid,.ev-build-flow{grid-template-columns:1fr}
   .ev-build-flow span:not(:last-child)::after{display:none}
+  .paths-loop-grid{grid-template-columns:1fr}
+  .pdp-strip{grid-template-columns:1fr}
+  .pdp-arrow{justify-self:center;transform:rotate(90deg)}
+  .loop-stage svg{min-height:430px}
   .industry-merge{grid-template-columns:1fr}
   .industry-path__steps{grid-template-columns:1fr 1fr}
   .industry-node:not(:last-child)::after{display:none}
@@ -944,6 +1014,7 @@ img{display:block;max-width:100%}
   --img-vedic-facility-vr:url("assets/vedic_logos/vedic-facility/VR_Experience_Lab.JPG");
   --img-i5-mobility:url("assets/i5_lab/i5_inside.png");
   --img-i5-robot:url("assets/i5_lab/i5_inside_1.png");
+  --img-paths-studio:url("assets/PATHS/PATHS_Studio_BG.jpeg");
   --img-lg-unity:url("assets/logo-unity.svg");
   --img-lg-unreal:url("assets/logo-unreal.svg");
   --img-lg-ethereum:url("assets/logo-ethereum.png");
@@ -977,36 +1048,36 @@ img{display:block;max-width:100%}
             <h1 class="cover__title reveal">Centres<br>of <span class="em-serif">Excellence</span></h1>
             <p class="cover__sub reveal">Emerging technology, digital engineering and craft intelligence — what has been built, what it has produced, and what we propose next.</p>
             <div class="cover__coes reveal">
-              <div class="coe">
+              <button class="coe" type="button" data-target-slide="2" aria-label="Go to slide 2: Future Nexus CoE">
                 <span class="coe__n">01</span>
                 <span class="coe__name">Future Nexus CoE</span>
                 <span class="coe__tag">Learn · Experience · Innovate</span>
                 <span class="coe__est">Est. October 2018</span>
-              </div>
-              <div class="coe">
+              </button>
+              <button class="coe" type="button" data-target-slide="5" aria-label="Go to slide 5: VEDIC CoE">
                 <span class="coe__n">02</span>
                 <span class="coe__name">VEDIC CoE</span>
                 <span class="coe__tag">BPUT Centre of Excellence, PMEC</span>
                 <span class="coe__est">Est. August 2022</span>
-              </div>
-              <div class="coe">
+              </button>
+              <button class="coe" type="button" data-target-slide="8" aria-label="Go to slide 8: I5.0-4C Lab">
                 <span class="coe__n">03</span>
                 <span class="coe__name">I5.0-4C Lab</span>
                 <span class="coe__tag">Industry 5.0 – Centre for Curiosity, Creativity &amp; Competency</span>
                 <span class="coe__est">Centurion University</span>
-              </div>
-              <div class="coe">
+              </button>
+              <button class="coe" type="button" data-target-slide="10" aria-label="Go to slide 10: EV Technology CoE">
                 <span class="coe__n">04</span>
                 <span class="coe__name">EV Technology CoE</span>
                 <span class="coe__tag">Design · Build · Deploy</span>
                 <span class="coe__est">With Skyy Rider Electric</span>
-              </div>
-              <div class="coe">
+              </button>
+              <button class="coe" type="button" data-target-slide="12" aria-label="Go to slide 12: PATHS CoE">
                 <span class="coe__n">05</span>
                 <span class="coe__name">PATHS CoE</span>
                 <span class="coe__tag">Design Thinking by Thinking Design</span>
                 <span class="coe__est">Est. August 2026</span>
-              </div>
+              </button>
             </div>
             <p class="cover__foot reveal">
               <span>Annual Academic Council</span>
@@ -1505,7 +1576,8 @@ img{display:block;max-width:100%}
         </section>
 
         <!-- ============ 12 · DIVIDER 05 ============ -->
-        <section class="slide divider" data-title="PATHS CoE" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, section opener">
+        <section class="slide divider paths-opener" data-title="PATHS CoE" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, section opener">
+          <div class="photobg paths__bg" aria-hidden="true"></div>
           <div class="spine reveal"><span><b>05</b> &nbsp;/&nbsp; PATHS CoE</span></div>
           <div class="slide__inner">
             <div class="divider__top reveal">
@@ -1522,14 +1594,14 @@ img{display:block;max-width:100%}
         </section>
 
         <!-- ============ 13 · PATHS — TWIN + LEARNING LOOP ============ -->
-        <section class="slide" data-title="Physical → Digital → Physical" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, the physical digital physical loop">
+        <section class="slide paths-loop-slide" data-title="Physical → Digital → Physical" data-section="05 · PATHS CoE" data-phase="e" aria-roledescription="slide" aria-label="PATHS, the physical digital physical learning loop and technology stack">
           <div class="spine reveal"><span><b>05</b> &nbsp;/&nbsp; PATHS CoE</span></div>
           <div class="slide__inner">
             <div class="s-head reveal">
-              <p class="eyebrow">Physical &rarr; Digital &rarr; Physical</p>
-              <h2 class="h1">A craft object carries knowledge <span class="em-serif">that was never written down</span></h2>
+              <p class="eyebrow">The Learning Loop</p>
+              <h2 class="h1">One craft becomes a digital record, <span class="em-serif">then returns better to the maker</span></h2>
             </div>
-            <div class="split reveal">
+            <div class="split reveal paths-loop-legacy" aria-hidden="true">
               <div style="display:flex;flex-direction:column;gap:1rem">
                 <ul class="tick" style="font-size:var(--fs-body)">
                   <li>Photograph a craft piece; AI reconstructs it as a 3D digital twin.</li>
@@ -1584,6 +1656,59 @@ img{display:block;max-width:100%}
                 </div>
               </figure>
             </div>
+            <div class="pdp-strip reveal" aria-label="Physical to digital to physical workflow">
+              <div class="pdp-step"><span class="pdp-step__n">01</span><span><b>Physical craft</b><small>Photograph the object and record its story.</small></span></div>
+              <span class="pdp-arrow" aria-hidden="true">→</span>
+              <div class="pdp-step pdp-step--digital"><span class="pdp-step__n">02</span><span><b>Digital working model</b><small>Create, reshape, approve and preserve every version.</small></span></div>
+              <span class="pdp-arrow" aria-hidden="true">→</span>
+              <div class="pdp-step"><span class="pdp-step__n">03</span><span><b>Physical remake</b><small>Make by hand, compare the result and improve.</small></span></div>
+            </div>
+            <div class="paths-loop-grid reveal">
+              <figure class="loop-stage" aria-label="PATHS Learning Loop with twelve stages">
+                <svg viewBox="0 0 680 520" role="img" aria-labelledby="pathsLoopTitle pathsLoopDesc">
+                  <title id="pathsLoopTitle">The PATHS Learning Loop</title>
+                  <desc id="pathsLoopDesc">Twelve stages connect observation to validation. Validation returns to observation.</desc>
+                  <ellipse class="loop-track" cx="340" cy="252" rx="225" ry="174"></ellipse>
+                  <path class="loop-arc" d="M340 78 A225 174 0 0 1 565 252 A225 174 0 0 1 452 403" style="stroke:var(--ember)"></path>
+                  <path class="loop-arc" d="M445 407 A225 174 0 0 1 230 407" style="stroke:var(--pulse)"></path>
+                  <path class="loop-arc" d="M222 402 A225 174 0 0 1 115 252 A225 174 0 0 1 330 78" style="stroke:var(--gold)"></path>
+                  <g text-anchor="middle">
+                    <g transform="translate(340 78)"><circle class="loop-node" r="9" style="fill:var(--ember)"></circle><text class="loop-num" y="-20">01</text><text class="loop-label" y="-37">Observe</text></g>
+                    <g transform="translate(452 101)"><circle class="loop-node" r="9" style="fill:var(--ember)"></circle><text class="loop-num" x="18" y="-6">02</text><text class="loop-label" x="42" y="-21">Image</text></g>
+                    <g transform="translate(535 165)"><circle class="loop-node" r="9" style="fill:var(--ember)"></circle><text class="loop-num" x="20" y="-3">03</text><text class="loop-label" x="51" y="-18">Digitize</text></g>
+                    <g transform="translate(565 252)"><circle class="loop-node" r="9" style="fill:var(--ember)"></circle><text class="loop-num" x="22" y="4">04</text><text class="loop-label" x="56" y="22">Twin</text></g>
+                    <g transform="translate(535 339)"><circle class="loop-node" r="9" style="fill:var(--ember)"></circle><text class="loop-num" x="20" y="10">05</text><text class="loop-label" x="51" y="30">Ideate</text></g>
+                    <g transform="translate(452 403)"><circle class="loop-node" r="9" style="fill:var(--pulse)"></circle><text class="loop-num" x="15" y="22">06</text><text class="loop-label" x="44" y="42">Augment</text></g>
+                    <g transform="translate(340 426)"><circle class="loop-node" r="9" style="fill:var(--pulse)"></circle><text class="loop-num" y="24">07</text><text class="loop-label" y="44">Redesign</text></g>
+                    <g transform="translate(228 403)"><circle class="loop-node" r="9" style="fill:var(--pulse)"></circle><text class="loop-num" x="-16" y="22">08</text><text class="loop-label" x="-48" y="42">Co-create</text></g>
+                    <g transform="translate(145 339)"><circle class="loop-node" r="9" style="fill:var(--gold)"></circle><text class="loop-num" x="-20" y="10">09</text><text class="loop-label" x="-52" y="30">Approve</text></g>
+                    <g transform="translate(115 252)"><circle class="loop-node" r="9" style="fill:var(--gold)"></circle><text class="loop-num" x="-23" y="4">10</text><text class="loop-label" x="-58" y="22">Re-cast</text></g>
+                    <g transform="translate(145 165)"><circle class="loop-node" r="9" style="fill:var(--gold)"></circle><text class="loop-num" x="-20" y="-3">11</text><text class="loop-label" x="-51" y="-18">Craft</text></g>
+                    <g transform="translate(228 101)"><circle class="loop-node" r="9" style="fill:var(--gold)"></circle><text class="loop-num" x="-17" y="-6">12</text><text class="loop-label" x="-50" y="-21">Validate</text></g>
+                  </g>
+                  <g text-anchor="middle">
+                    <text class="loop-hub-eye" x="340" y="220">PHYSICAL · DIGITAL · PHYSICAL</text>
+                    <text class="loop-hub-title" x="340" y="259">THE LEARNING LOOP</text>
+                    <text class="loop-hub-copy" x="340" y="286">Every finished piece teaches the next version.</text>
+                    <text class="loop-hub-copy" x="340" y="306">The maker remains in control.</text>
+                  </g>
+                </svg>
+                <div class="loop-stage__key"><span><i style="background:var(--ember)"></i>Capture</span><span><i style="background:var(--pulse)"></i>Reimagine</span><span><i style="background:var(--gold)"></i>Make + check</span></div>
+              </figure>
+              <aside class="paths-value-stack" aria-label="Direct value and technology used">
+                <div class="paths-value"><span class="paths-value__n">01</span><span><b>Save knowledge before it disappears</b><span>Keep the form, material, technique, maker and story together.</span></span></div>
+                <div class="paths-value"><span class="paths-value__n">02</span><span><b>Reduce avoidable rework</b><span>Show the approved design at true scale before clay work begins.</span></span></div>
+                <div class="paths-value"><span class="paths-value__n">03</span><span><b>Protect authorship</b><span>Every redesign points back to the original object and its maker.</span></span></div>
+                <div class="paths-value"><span class="paths-value__n">04</span><span><b>Improve with every piece</b><span>Compare the remake with the approved model and record the difference.</span></span></div>
+                <div class="paths-tech">
+                  <div class="paths-tech__head"><b>Technology in use</b><span>Connected through PLM</span></div>
+                  <p><strong>Create:</strong> Artificial Intelligence, Generative AI and 3D Digital Twins</p>
+                  <p><strong>Guide the maker:</strong> Augmented Reality, Mixed Reality and Spatial Computing</p>
+                  <p><strong>Check the result:</strong> Computer Vision, 3D Scanning and Edge AI</p>
+                  <p><strong>Manage the lifecycle:</strong> Product Lifecycle Management, Digital Thread and Cloud Analytics</p>
+                </div>
+              </aside>
+            </div>
           </div>
         </section>
 
@@ -1624,15 +1749,16 @@ img{display:block;max-width:100%}
             <div class="split reveal">
               <figure class="fig">
                 <div class="triptych">
-                  <div class="photo"><img alt="" loading="lazy" src="https://source.unsplash.com/600x800/?pottery,wheel,artisan" onload="this.closest('.photo').classList.add('is-loaded')" onerror="this.remove()"><span class="photo__tag">Photo · pottery wheel</span></div>
-                  <div class="photo"><img alt="" loading="lazy" src="https://source.unsplash.com/600x800/?ceramics,hands,clay" onload="this.closest('.photo').classList.add('is-loaded')" onerror="this.remove()"><span class="photo__tag">Photo · glazing</span></div>
-                  <div class="photo"><img alt="" loading="lazy" src="https://source.unsplash.com/600x800/?augmented-reality,3d-scan" onload="this.closest('.photo').classList.add('is-loaded')" onerror="this.remove()"><span class="photo__tag">Photo · AR twin</span></div>
+                  <div class="photo"><img alt="Original decorated pottery reference" loading="lazy" src="assets/PATHS/original_item.JPG" onload="this.closest('.photo').classList.add('is-loaded')"><span class="photo__tag">Original item</span></div>
+                  <div class="photo"><img alt="Pottery form created by hand in the PATHS studio" loading="lazy" src="assets/PATHS/real_created_design.jpeg" onload="this.closest('.photo').classList.add('is-loaded')"><span class="photo__tag">Crafted prototype</span></div>
+                  <div class="photo"><img alt="AI reimagining of the terracotta vase" loading="lazy" src="assets/PATHS/reimagined_with_ai.jpg" onload="this.closest('.photo').classList.add('is-loaded')"><span class="photo__tag">AI reimagining</span></div>
                 </div>
-                <figcaption class="figcap">Placeholders — swap in your own capture, redesign and AR-reference photos from paths.cutm.ac.in.</figcaption>
+                <figcaption class="figcap">The PATHS workflow in evidence: original reference, human-made prototype and an AI-assisted reimagining.</figcaption>
               </figure>
               <div class="panel">
                 <span class="panel__k">Why this matters to BPUT</span>
-                <p class="dim body">Odisha's craft clusters are a live economy, not a heritage exhibit. PATHS turns them into project work, publishable research and student IP — and a twelve-month cluster study is designed and ready to run. The same platform can carry a project bank for any affiliated college with a craft cluster nearby.</p>
+                <p class="dim body">PATHS now closes the design-to-making loop with measured evidence. Its first AI-designed vase and wheel-thrown prototype scored 78.7/100 for geometric similarity. The shoulder translated best at 86%. Body volume remains the main gap at 72%. The result is recognizable but not yet digital-twin grade, giving students a precise brief for iteration and revalidation.</p>
+                <p class="panel__foot">Form geometry only, assessed from frontal photographs. PATHS validation report, 21 August 2026.</p>
               </div>
             </div>
           </div>
@@ -2014,6 +2140,13 @@ img{display:block;max-width:100%}
     go(current - 1);
   }
 
+  /* ---- cover shortcuts ---- */
+  deck.querySelectorAll('.cover__coes [data-target-slide]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      go(Number(button.dataset.targetSlide) - 1);
+    });
+  });
+
   /* ---- controls ---- */
   document.getElementById('edgeNext').addEventListener('click', next);
   document.getElementById('edgePrev').addEventListener('click', prev);
@@ -2088,7 +2221,7 @@ img{display:block;max-width:100%}
     img.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        img.click();
+        el.click();
       }
     });
   });
