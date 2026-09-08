@@ -527,6 +527,28 @@ img{display:block;max-width:100%}
   linear-gradient(120deg,var(--deep) 30%, color-mix(in srgb,var(--deep) 46%,transparent) 66%, color-mix(in srgb,var(--deep) 22%,transparent)),
   linear-gradient(to top,var(--deep),transparent 66%)}
 
+/* I5.0-4C Lab — supplied lab photography, treated as part of the narrative */
+.i5-opener{color:#fff}
+.i5-opener .i5__bg{background-image:var(--img-i5-mobility,none);background-position:center 58%}
+.i5-opener .i5__bg::after{background:
+  linear-gradient(102deg,rgba(4,10,19,.97) 0%,rgba(4,10,19,.84) 31%,rgba(4,10,19,.28) 67%,rgba(4,10,19,.4) 100%),
+  linear-gradient(to top,rgba(4,10,19,.9),transparent 58%)}
+.i5-opener .slide__inner{isolation:isolate}
+.i5-opener .divider__top{max-width:min(790px,66%)}
+.i5-opener .eyebrow,.i5-opener .em-serif{color:#f2a779}
+.i5-opener .divider__rule{background:linear-gradient(90deg,#f2a779,#62ded2,transparent)}
+.i5-opener .metaline{color:rgba(255,255,255,.78);text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.i5-opener .metaline a{color:#fff}
+.i5-opener .i5__caption{position:absolute;right:clamp(1.1rem,3cqi,2.4rem);bottom:clamp(1rem,3cqi,2.2rem);display:flex;align-items:center;gap:.65em;padding:.5em .75em;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(4,10,19,.52);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.i5-opener .i5__caption::before{content:"";width:.55em;height:.55em;border-radius:50%;background:#62ded2;box-shadow:0 0 0 4px rgba(98,222,210,.16)}
+.i5-purpose-slide{background:radial-gradient(45% 65% at 92% 50%,color-mix(in srgb,var(--pulse) 9%,transparent),transparent 72%)}
+.i5-build-panel{position:relative;isolation:isolate;overflow:hidden;background-color:var(--panel-ink);background-image:
+  linear-gradient(90deg,rgba(4,10,19,.97) 0%,rgba(4,10,19,.9) 50%,rgba(4,10,19,.62) 100%),
+  var(--img-i5-robot,none);background-size:cover;background-position:center}
+.i5-build-panel::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(232,118,60,.11),transparent 42%,rgba(79,214,200,.09))}
+.i5-build-panel .panel__k{display:flex;align-items:center;gap:.65em}
+.i5-build-panel .panel__k::after{content:"Robotic welding cell";margin-left:auto;padding:.28em .6em;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.78em;letter-spacing:.08em;color:var(--on-ink-dim);background:rgba(4,10,19,.44)}
+
 /* Future Nexus wordmark — white art on dark theme, black art on light theme */
 .fn-mark{width:clamp(128px,18cqi,224px);height:clamp(34px,4.6cqi,58px);
   background:var(--img-fn-logo,none) left center/contain no-repeat}
@@ -841,6 +863,10 @@ img{display:block;max-width:100%}
   .triptych{grid-template-columns:1fr 1fr}
   .fig svg{max-height:none}
   .cover__bg::after{background:linear-gradient(to top,var(--deep),color-mix(in srgb,var(--deep) 40%,transparent) 70%)}
+  .i5-opener .divider__top{max-width:none}
+  .i5-opener .i5__bg{background-position:38% center}
+  .i5-opener .i5__bg::after{background:linear-gradient(to top,rgba(4,10,19,.96) 0%,rgba(4,10,19,.78) 72%,rgba(4,10,19,.48) 100%)}
+  .i5-opener .i5__caption{position:static;align-self:flex-start;width:max-content;margin-top:.5rem}
   .domains-slide{padding:5.4rem 1.3rem 4rem}
   .domains-slide::before{display:none}
   .domains-slide .slide__inner{gap:1rem;overflow:visible}
@@ -916,6 +942,8 @@ img{display:block;max-width:100%}
   --img-vedic-facility-3dx:url("assets/vedic_logos/vedic-facility/3dExperience_Lab.JPG");
   --img-vedic-facility-maker:url("assets/vedic_logos/vedic-facility/Makers_Lab_3D_Printer.JPG");
   --img-vedic-facility-vr:url("assets/vedic_logos/vedic-facility/VR_Experience_Lab.JPG");
+  --img-i5-mobility:url("assets/i5_lab/i5_inside.png");
+  --img-i5-robot:url("assets/i5_lab/i5_inside_1.png");
   --img-lg-unity:url("assets/logo-unity.svg");
   --img-lg-unreal:url("assets/logo-unreal.svg");
   --img-lg-ethereum:url("assets/logo-ethereum.png");
@@ -1344,7 +1372,8 @@ img{display:block;max-width:100%}
         </section>
 
         <!-- ============ 10 · DIVIDER 03 ============ -->
-        <section class="slide divider" data-title="I5.0-4C Lab" data-section="03 · I5.0-4C Lab" data-phase="c" aria-roledescription="slide" aria-label="I5.0-4C Lab, section opener">
+        <section class="slide divider i5-opener" data-title="I5.0-4C Lab" data-section="03 · I5.0-4C Lab" data-phase="c" aria-roledescription="slide" aria-label="I5.0-4C Lab, section opener">
+          <div class="photobg i5__bg" aria-hidden="true"></div>
           <div class="spine reveal"><span><b>03</b> &nbsp;/&nbsp; I5.0-4C Lab</span></div>
           <div class="slide__inner">
             <div class="divider__top reveal">
@@ -1357,11 +1386,12 @@ img{display:block;max-width:100%}
             <div class="divider__rule reveal"></div>
             <p class="metaline reveal">Centurion University of Technology and Management</p>
             <p class="metaline reveal dim"><a href="https://icccc.cutm.ac.in" target="_blank" rel="noopener noreferrer">icccc.cutm.ac.in</a></p>
+            <p class="i5__caption reveal">Autonomous mobility testbed</p>
           </div>
         </section>
 
         <!-- ============ 11 · I5.0-4C — PURPOSE + PROJECTS ============ -->
-        <section class="slide" data-title="Innovation meets purpose" data-section="03 · I5.0-4C Lab" data-phase="c" aria-roledescription="slide" aria-label="I5.0-4C Lab, purpose, principles and active projects">
+        <section class="slide i5-purpose-slide" data-title="Innovation meets purpose" data-section="03 · I5.0-4C Lab" data-phase="c" aria-roledescription="slide" aria-label="I5.0-4C Lab, purpose, principles and active projects">
           <div class="spine reveal"><span><b>03</b> &nbsp;/&nbsp; I5.0-4C Lab</span></div>
           <div class="slide__inner">
             <div class="s-head reveal">
@@ -1390,7 +1420,7 @@ img{display:block;max-width:100%}
                 </div>
               </div>
 
-              <div class="panel reveal">
+              <div class="panel i5-build-panel reveal">
                 <span class="panel__k">What the lab builds</span>
                 <div class="panel-grid">
                   <div><h4>Industry</h4><p class="dim body">Robotic welding for transformers<br>Weave-Bot: IKAT automation<br>AWS cloud optimization</p></div>
